@@ -30,9 +30,9 @@ parser.add_argument('--hidden', type=int, default=64,
 parser.add_argument('--dropout', type=float, default=0.5,
                     help='Dropout rate (1 - keep probability).')
 parser.add_argument('--alpha', type=float, default=7,
-                    help='Dropout rate (1 - keep probability).')
+                    help=' class-balanced parameter.')
 parser.add_argument('--beta', type=float, default=1e-1,
-                    help='Dropout rate (1 - keep probability).')
+                    help='l2 regularization parameter).')
 
 
 args = parser.parse_args()
