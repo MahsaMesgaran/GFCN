@@ -1,7 +1,5 @@
 # GFCN
 
-# Installation
-python setup.py install
 
 # Requirements
 PyTorch 0.4 or 0.5
