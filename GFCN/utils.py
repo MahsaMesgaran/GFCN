@@ -95,8 +95,8 @@ def load_data(dataset_str):
     np.random.shuffle(idx)
     idx_normal = idx[idx != 0]  # Normal classes index
         
-    idx_train = idx_normal[:83]
-    idx_val = idx[:333]
+    idx_train = idx_normal[:68]
+    idx_val = idx[:271]
     idx_test = idx[len(idx_val):]
 
     
