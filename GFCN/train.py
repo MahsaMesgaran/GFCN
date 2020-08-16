@@ -29,9 +29,9 @@ parser.add_argument('--hidden', type=int, default=64,
                     help='Number of hidden units.')
 parser.add_argument('--dropout', type=float, default=0.5,
                     help='Dropout rate (1 - keep probability).')
-parser.add_argument('--alpha', type=float, default=7,
+parser.add_argument('--alpha', type=float, default=4,
                     help='class-balanced parameter.')
-parser.add_argument('--beta', type=float, default=1e-1,
+parser.add_argument('--beta', type=float, default=1e-2,
                     help='l2 regularization parameter).')
 
 
