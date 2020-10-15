@@ -98,16 +98,10 @@ def train(epoch):
 
 def test():
     model.eval()
-    output, w1, w2, w3, w4 = model(features, adj)
-
-    w1 = torch.pow(torch.norm(w1), 2)
-    w2 = torch.pow(torch.norm(w2), 2)
-    w3 = torch.pow(torch.norm(w3), 2)
-    w4 = torch.pow(torch.norm(w4), 2)
-    l2_reg = w1 + w2 + w3 + w4 
+    output, _, _, _, _ = model(features, adj)
 
     loss = torch.nn.CrossEntropyLoss(weight = class_weights)
-    loss_test = loss(output[idx_test], labels[idx_test]) + args.beta*l2_reg
+    loss_test = loss(output[idx_test], labels[idx_test])
     loss_test.backward()
 
     scores = F.softmax(output, dim=1)
