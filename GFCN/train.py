@@ -102,7 +102,6 @@ def test():
 
     loss = torch.nn.CrossEntropyLoss(weight = class_weights)
     loss_test = loss(output[idx_test], labels[idx_test])
-    loss_test.backward()
 
     scores = F.softmax(output, dim=1)
     fpr, tpr, t = roc_curve(labels[idx_test].detach().numpy(), scores[idx_test,0].detach().numpy(), pos_label = 0)
