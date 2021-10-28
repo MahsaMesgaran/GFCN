@@ -95,9 +95,14 @@ def load_data(dataset_str):
     np.random.shuffle(idx)
     idx_normal = idx[idx != 0]  # Normal classes index
         
-    idx_train = idx_normal[:68]
-    idx_val = idx[:271]
-    idx_test = idx[len(idx_val):]
+    num_node = adj.shape[0]
+    num_train = int(num_node * 0.025)
+    num_val = int(num_node * 0.1)
+    all_idx = list(range(num_node))
+    random.shuffle(all_idx)
+    idx_train = all_idx[ : num_train]
+    idx_val = all_idx[num_train : num_train + num_val]
+    idx_test = all_idx[num_train + num_val : ]  
 
     
     features = torch.FloatTensor(features)
