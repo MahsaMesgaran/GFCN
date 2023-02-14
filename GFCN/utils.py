@@ -99,7 +99,6 @@ def load_data(dataset_str):
     num_train = int(num_node * 0.025)
     num_val = int(num_node * 0.1)
     all_idx = list(range(num_node))
-    random.shuffle(all_idx)
     idx_train = all_idx[ : num_train]
     idx_val = all_idx[num_train : num_train + num_val]
     idx_test = all_idx[num_train + num_val : ]  
