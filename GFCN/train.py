@@ -19,19 +19,19 @@ parser.add_argument('--no-cuda', action='store_true', default=False,
 parser.add_argument('--fastmode', action='store_true', default=False,
                     help='Validate during training pass.')
 parser.add_argument('--seed', type=int, default=123, help='Random seed.')
-parser.add_argument('--epochs', type=int, default=100,
+parser.add_argument('--epochs', type=int, default=200,
                     help='Number of epochs to train.')
-parser.add_argument('--lr', type=float, default=0.05,
+parser.add_argument('--lr', type=float, default=0.1,
                     help='Initial learning rate.')
 parser.add_argument('--weight_decay', type=float, default=0,
                     help='Weight decay (L2 loss on parameters).')
-parser.add_argument('--hidden', type=int, default=64,
+parser.add_argument('--hidden', type=int, default=128,
                     help='Number of hidden units.')
 parser.add_argument('--dropout', type=float, default=0.5,
                     help='Dropout rate (1 - keep probability).')
-parser.add_argument('--alpha', type=float, default=4,
+parser.add_argument('--alpha', type=float, default=5,
                     help='class-balanced parameter.')
-parser.add_argument('--beta', type=float, default=1e-2,
+parser.add_argument('--beta', type=float, default=1e-1,
                     help='l2 regularization parameter).')
 
 
@@ -44,7 +44,7 @@ if args.cuda:
     torch.cuda.manual_seed(args.seed)
 
 # Load data
-adj, features, labels, idx_train, idx_test, idx_val = load_data("cora")  #cora, citeseer, pubmed
+adj, features, labels, idx_train, idx_test, idx_val = load_data("pubmed")  #cora, citeseer, pubmed
 
 # Model and optimizer
 model = GCN(nfeat=features.shape[1],
