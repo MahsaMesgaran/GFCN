@@ -96,8 +96,8 @@ def load_data(dataset_str):
     idx_normal = idx[idx != 0]  # Normal classes index
         
     num_node = adj.shape[0]
-    num_train = int(num_node * 0.025)
-    num_val = int(num_node * 0.1)
+    num_train = int(num_node * 0.1)
+    num_val = int(num_node * 0.01)
     all_idx = list(range(num_node))
     idx_train = all_idx[ : num_train]
     idx_val = all_idx[num_train : num_train + num_val]
