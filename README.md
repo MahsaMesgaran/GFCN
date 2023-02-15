@@ -12,11 +12,11 @@ datasets, achieving better or comparable anomaly detection results against stron
 
 
 # Requirements
-scipy==1.7.3
-python==3.6.1
-matplotlib==3.3.4
-numpy==1.19.2
-scikit-learn==0.24.1
-scipy==1.5.2
-torch==1.8.1
+scipy==1.7.3 \\
+python==3.6.1 \\
+matplotlib==3.3.4 \\
+numpy==1.19.2 \\
+scikit-learn==0.24.1 \\
+scipy==1.5.2 \\
+torch==1.8.1 \\
 
